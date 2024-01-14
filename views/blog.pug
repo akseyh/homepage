@@ -1,4 +1,20 @@
 extends layouts/main
 
 block content
-  h1 Blog
+  .flex.flex-col.justify-center.items-center.gap-y-4.pb-28
+    each file in files
+      .card.hover_bg-neutral-800.cursor-pointer(class="w-1/2" hx-get=`/blog/${file.slug}` hx-target="body" hx-swap="innerHTML show:top" hx-push-url="true")
+        .card-body
+          small #{file.prettyDate}
+          .card-title #{file.title}
+          if file.short
+            div #{file.short}
+    .join
+      each _, idx in Array(totalPage).fill(0)
+          span.join-item.px-4.py-2.bg-neutral-700.hover_bg-neutral-800.cursor-pointer(
+            hx-get=`/blog?page=${idx + 1}` 
+            hx-target="body" 
+            hx-swap="innerHTML show:top" 
+            hx-push-url="true" 
+            class=`${page === idx + 1 && 'bg-neutral-800'}`
+          ) #{idx + 1}

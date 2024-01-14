@@ -1,6 +1,6 @@
 doctype html
 
-html(lang="en")
+html.scroll-smooth.no-scrollbar(lang="en")
   head
     meta(charSet="utf-8")
     title HTMX
@@ -12,11 +12,11 @@ html(lang="en")
     )
     script(src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous")
 
-  body(hx-boost="true")
+  body.snap-none.w-full.min-h-screen.bg-neutral-900(hx-boost="true")
     div.flex.flex-col
       div.flex.w-full.items-center.justify-center.mt-4
         include ../includes/menu
       div.flex.w-full.items-center.justify-center.mt-4
         block content
           div Page Not Found!
-      include ../includes/modal
+    include ../includes/modal
