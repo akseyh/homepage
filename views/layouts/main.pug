@@ -1,0 +1,22 @@
+doctype html
+
+html(lang="en")
+  head
+    meta(charSet="utf-8")
+    title HTMX
+    link(href="/output.css" rel="stylesheet")
+    link(
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    )
+    script(src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous")
+
+  body(hx-boost="true")
+    div.flex.flex-col
+      div.flex.w-full.items-center.justify-center.mt-4
+        include ../includes/menu
+      div.flex.w-full.items-center.justify-center.mt-4
+        block content
+          div Page Not Found!
+      include ../includes/modal
