@@ -2320,6 +2320,10 @@ html {
   width: 66.666667%;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .w-full {
   width: 100%;
 }
