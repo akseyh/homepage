@@ -2,11 +2,11 @@
   "name": "akseyh.github.io",
   "version": "1.0.0",
   "description": "",
-  "main": "./index.js",
+  "main": "./src/index.js",
   "scripts": {
     "generate:tailwind": "npx tailwindcss -i ./views/styles/input.css -o ./public/output.css",
     "dev": "nodemon -e pug --watch views ./src/index.ts",
-    "start": "node index.js",
+    "start": "node ./src/index.js",
     "build": "tsc"
   },
   "keywords": [],
