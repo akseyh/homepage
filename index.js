@@ -8,8 +8,10 @@ const marked_1 = require("marked");
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const gray_matter_1 = __importDefault(require("gray-matter"));
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const app = (0, express_1.default)();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.use(express_1.default.static("public"));
 app.set("view engine", "pug");
 app.get("/", (req, res) => {
