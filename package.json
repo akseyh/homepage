@@ -7,7 +7,8 @@
     "generate:tailwind": "npx tailwindcss -i ./views/styles/input.css -o ./public/output.css",
     "dev": "nodemon -e pug --watch views ./src/index.ts",
     "start": "node ./src/index.js",
-    "build": "tsc"
+    "build": "tsc",
+    "publish": "sh scripts/publish-content.sh"
   },
   "keywords": [],
   "author": "",
