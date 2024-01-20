@@ -1,12 +1,9 @@
-ul.menu.menu-horizontal.rounded-box.bg-neutral-800(class="p-1")
-  li.bg-neutral-800.hover_bg-neutral-900.transition-all.duration-300.active
-    a.bg-neutral-800(href="/") Me
-  li.bg-neutral-800.hover_bg-neutral-900.transition-all.duration-300
-    a.bg-neutral-800(href="/blog") Blog
-  li.bg-neutral-800.transition-all.duration-300.disabled
-    a.bg-neutral-800 Wiki
-  li.bg-neutral-800.transition-all.duration-300.disabled
-    a.bg-neutral-800 Products
-  li.bg-neutral-800.ml-36.transition-all.duration-300.disabled
-    label.bg-neutral-800 Search
-    //- label.bg-neutral-800(for="my_modal_7") Search
+ul.flex.flex-row.gap-x-4
+  li.text-white
+    a.px-8.py-4.w-full.h-full.bg-neutral-700.hover_bg-neutral-800.transition(href="/") Me
+  li.text-white
+    a.px-8.py-4.w-full.h-full.bg-neutral-700.hover_bg-neutral-800.transition(href="/blog") Blog
+  li.text-neutral-700.cursor-not-allowed
+    a.px-8.py-4.w-full.h-full.bg-neutral-800.disabled Wiki
+  li.text-neutral-700.cursor-not-allowed
+    a.px-8.py-4.w-full.h-full.bg-neutral-800.disabled Products

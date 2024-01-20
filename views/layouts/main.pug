@@ -5,18 +5,12 @@ html.scroll-smooth.no-scrollbar(lang="en")
     meta(charSet="utf-8")
     title Şems Yılmaz
     link(href="/output.css" rel="stylesheet")
-    link(
-      href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css"
-      rel="stylesheet"
-      type="text/css"
-    )
-    script(src="htmx.min.js" type="text/javascript")
+    script(src="/htmx.min.js" type="text/javascript")
 
   body.snap-none.w-full.min-h-screen.bg-neutral-900(hx-boost="true")
-    div.flex.flex-col
-      div.flex.w-full.items-center.justify-center.mt-4
+    div.flex.flex-col.mb-32
+      div.flex.w-full.items-center.justify-center.mt-8
         include ../includes/menu
-      div.flex.w-full.items-center.justify-center.mt-4
+      div.flex.w-full.items-center.justify-center
         block content
           div Page Not Found!
-    include ../includes/modal
