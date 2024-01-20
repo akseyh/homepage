@@ -1,7 +1,7 @@
 extends layouts/main
 
 block content
-  .flex.flex-col.mt-16(class="w-auto")
-    h1.text-3xl.font-bold.text-neutral-300 #{title}
-    small.text-neutral-500(role='status') #{date}
-    article.prose.prose-invert.mt-8 !{markdown}
+  .flex.flex-col.mt-16(class="w-11/12 xl_w-auto")
+    h1.text-6xl.xl_text-4xl.font-bold.text-neutral-300 #{title}
+    small.text-4xl.xl_text-xl.text-neutral-500.mt-2 #{date}
+    article.prose.prose-invert.prose-2xl.xl_prose-base.mt-8 !{markdown}
