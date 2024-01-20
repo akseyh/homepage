@@ -5,9 +5,9 @@ block content
     each file in files
       .flex.flex-col.text-neutral-400.hover_bg-neutral-800.cursor-pointer.px-8.py-4.transition(class="w-1/2" hx-get=`/blog/${file.slug}` hx-target="body" hx-swap="innerHTML show:top" hx-push-url="true")
         .flex
-          .font-medium.mr-4.text-neutral-400.w-full #{file.prettyDate}
-          .flex.flex-col
-            span.text-2xl.font-medium.text-neutral-100 #{file.title}
+          .font-medium.mr-4.text-neutral-400.min-w-48 #{file.prettyDate}
+          .flex.flex-col.justify-start.items-start.w-full
+            span.text-2xl.font-medium.text-neutral-100.text-left #{file.title}
             if file.short
               span.text-sm.font-normal.text-neutral-500 #{file.short}
     .flex.flex-row.mt-8
