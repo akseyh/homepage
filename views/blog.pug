@@ -3,16 +3,16 @@ extends layouts/main
 block content
   .flex.flex-col.justify-center.items-center.gap-y-4.mt-16
     each file in files
-      .flex.flex-col.text-neutral-400.hover_bg-neutral-800.cursor-pointer.px-8.py-4.transition(class="w-1/2" hx-get=`/blog/${file.slug}` hx-target="body" hx-swap="innerHTML show:top" hx-push-url="true")
-        .flex
-          .font-medium.mr-4.text-neutral-400.min-w-48 #{file.prettyDate}
+      .flex.flex-col.text-neutral-400.hover_bg-neutral-800.cursor-pointer.px-8.py-4.transition(class="w-4/5 xl_w-1/2" hx-get=`/blog/${file.slug}` hx-target="body" hx-swap="innerHTML show:top" hx-push-url="true")
+        .flex.flex-col.xl_flex-row
+          .font-medium.mr-4.text-neutral-400.min-w-48.xl_text-base.text-3xl #{file.prettyDate}
           .flex.flex-col.justify-start.items-start.w-full
-            span.text-2xl.font-medium.text-neutral-100.text-left #{file.title}
+            span.xl_text-2xl.text-5xl.font-medium.text-neutral-100.text-left #{file.title}
             if file.short
-              span.text-sm.font-normal.text-neutral-500 #{file.short}
+              span.xl_text-sm.text-3xl.font-normal.text-neutral-500 #{file.short}
     .flex.flex-row.mt-8
       each _, idx in Array(totalPage).fill(0)
-          span.px-4.py-2.bg-neutral-700.hover_bg-neutral-800.cursor-pointer.text-neutral-100(
+          span.text-3xl.xl_text-base.px-6.py-4.xl_px-4.xl_py-2.bg-neutral-700.hover_bg-neutral-800.cursor-pointer.text-neutral-100(
             hx-get=`/blog?page=${idx + 1}` 
             hx-target="body" 
             hx-swap="innerHTML show:top" 

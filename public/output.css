@@ -1083,8 +1083,9 @@ video {
   z-index: 10;
 }
 
-.mb-32 {
-  margin-bottom: 8rem;
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .ml-2 {
@@ -1115,8 +1116,8 @@ video {
   display: flex;
 }
 
-.h-6 {
-  height: 1.5rem;
+.h-12 {
+  height: 3rem;
 }
 
 .h-full {
@@ -1127,16 +1128,12 @@ video {
   min-height: 100vh;
 }
 
-.w-1\/2 {
-  width: 50%;
+.w-12 {
+  width: 3rem;
 }
 
-.w-2\/3 {
-  width: 66.666667%;
-}
-
-.w-6 {
-  width: 1.5rem;
+.w-4\/5 {
+  width: 80%;
 }
 
 .w-auto {
@@ -1209,13 +1206,16 @@ video {
   row-gap: 1rem;
 }
 
+.gap-y-8 {
+  row-gap: 2rem;
+}
+
 .scroll-smooth {
   scroll-behavior: smooth;
 }
 
-.bg-neutral-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(163 163 163 / var(--tw-bg-opacity));
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 
 .bg-neutral-700 {
@@ -1246,9 +1246,14 @@ video {
   padding-right: 0.25rem;
 }
 
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .px-8 {
@@ -1256,14 +1261,17 @@ video {
   padding-right: 2rem;
 }
 
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.pb-32 {
+  padding-bottom: 8rem;
+}
+
+.pt-24 {
+  padding-top: 6rem;
 }
 
 .pt-32 {
@@ -1274,29 +1282,24 @@ video {
   text-align: left;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
 
-.text-6xl {
-  font-size: 3.75rem;
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
   line-height: 1;
 }
 
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
 }
 
 .font-bold {
@@ -1391,4 +1394,66 @@ video {
 .hover_text-neutral-500:hover {
   --tw-text-opacity: 1;
   color: rgb(115 115 115 / var(--tw-text-opacity));
+}
+
+@media (min-width: 1280px) {
+  .xl_h-6 {
+    height: 1.5rem;
+  }
+
+  .xl_w-1\/2 {
+    width: 50%;
+  }
+
+  .xl_w-2\/3 {
+    width: 66.666667%;
+  }
+
+  .xl_w-6 {
+    width: 1.5rem;
+  }
+
+  .xl_flex-row {
+    flex-direction: row;
+  }
+
+  .xl_px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .xl_py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .xl_text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .xl_text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .xl_text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .xl_text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .xl_text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .xl_text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
