@@ -1,17 +1,18 @@
 extends layouts/main
 
 block content
-  .flex.flex-col.justify-center.items-center.gap-y-4.pb-28
+  .flex.flex-col.justify-center.items-center.gap-y-4.mt-16
     each file in files
-      .card.hover_bg-neutral-800.cursor-pointer(class="w-1/2" hx-get=`/blog/${file.slug}` hx-target="body" hx-swap="innerHTML show:top" hx-push-url="true")
-        .card-body
-          small #{file.prettyDate}
-          .card-title #{file.title}
-          if file.short
-            div #{file.short}
-    .join
+      .flex.flex-col.text-neutral-400.hover_bg-neutral-800.cursor-pointer.px-8.py-4.transition(class="w-1/2" hx-get=`/blog/${file.slug}` hx-target="body" hx-swap="innerHTML show:top" hx-push-url="true")
+        .flex
+          .font-medium.mr-4.text-neutral-400.w-full #{file.prettyDate}
+          .flex.flex-col
+            span.text-2xl.font-medium.text-neutral-100 #{file.title}
+            if file.short
+              span.text-sm.font-normal.text-neutral-500 #{file.short}
+    .flex.flex-row.mt-8
       each _, idx in Array(totalPage).fill(0)
-          span.join-item.px-4.py-2.bg-neutral-700.hover_bg-neutral-800.cursor-pointer(
+          span.px-4.py-2.bg-neutral-700.hover_bg-neutral-800.cursor-pointer.text-neutral-100(
             hx-get=`/blog?page=${idx + 1}` 
             hx-target="body" 
             hx-swap="innerHTML show:top" 

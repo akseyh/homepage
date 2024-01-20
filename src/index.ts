@@ -3,6 +3,7 @@ import { marked } from "marked";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import pug from "pug";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -40,7 +41,9 @@ app.get("/blog", (req: Request, res: Response) => {
 			title: data?.title || file.split(".")[0],
 			short: data?.short,
 			date,
-			prettyDate: data?.date,
+			prettyDate: `${date.toLocaleString("default", {
+				month: "long",
+			})} ${date.getDate()}, ${date.getFullYear()}`,
 		};
 	});
 
@@ -82,6 +85,45 @@ app.get("/wiki", (req: Request, res: Response) => {
 
 app.get("/products", (req: Request, res: Response) => {
 	res.render("products");
+});
+
+app.get("/latest-posts", (req: Request, res: Response) => {
+	const dir = path.join(__dirname, "../contents");
+	const fileNames = fs.readdirSync(dir);
+
+	const perPage = 5;
+	const totalPage = Math.ceil(fileNames.length / perPage);
+	const page = Number(req.query.page) || 1;
+	if (totalPage < page) return res.redirect("?page=1");
+
+	const files = fileNames.map((file) => {
+		const filedir = path.join(__dirname, `../contents/${file}`);
+		const readFile = fs.readFileSync(filedir);
+		const { data } = matter(readFile);
+
+		const [day, month, year] = data?.date?.split("/") || [null, null, null];
+		const date =
+			day && month && year ? new Date(`${year}-${month}-${day}`) : new Date();
+
+		return {
+			slug: file.split(".")[0],
+			title: data?.title || file.split(".")[0],
+			short: data?.short,
+			date,
+			prettyDate: `${date.toLocaleString("default", {
+				month: "long",
+			})} ${date.getDate()}, ${date.getFullYear()}`,
+		};
+	});
+
+	const filteredFiles = files
+		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+		.slice(0, 3);
+
+	const includeDir = path.join(__dirname, "../views/includes/latest-posts.pug");
+	const render = pug.compileFile(includeDir);
+
+	return res.send(render({ posts: filteredFiles }));
 });
 
 app.use((req: Request, res: Response) => {

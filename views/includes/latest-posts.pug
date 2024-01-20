@@ -1,0 +1,7 @@
+each post in posts
+  .flex.flex-col.text-neutral-400.hover_bg-neutral-800.cursor-pointer.py-4.w-full.px-1.transition(hx-get=`/blog/${post.slug}` hx-target="body" hx-swap="innerHTML show:top" hx-push-url="true")
+    .font-medium.mr-4.text-neutral-400.w-full #{post.prettyDate}
+    .flex.flex-col
+      span.text-2xl.font-medium.text-neutral-100 #{post.title}
+      if post.short
+        span.text-sm.font-normal.text-neutral-500 #{post.short}
