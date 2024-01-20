@@ -8,6 +8,7 @@ const marked_1 = require("marked");
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const gray_matter_1 = __importDefault(require("gray-matter"));
+const pug_1 = __importDefault(require("pug"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
@@ -37,7 +38,9 @@ app.get("/blog", (req, res) => {
             title: (data === null || data === void 0 ? void 0 : data.title) || file.split(".")[0],
             short: data === null || data === void 0 ? void 0 : data.short,
             date,
-            prettyDate: data === null || data === void 0 ? void 0 : data.date,
+            prettyDate: `${date.toLocaleString("default", {
+                month: "long",
+            })} ${date.getDate()}, ${date.getFullYear()}`,
         };
     });
     const filteredFiles = files
@@ -73,6 +76,38 @@ app.get("/wiki", (req, res) => {
 });
 app.get("/products", (req, res) => {
     res.render("products");
+});
+app.get("/latest-posts", (req, res) => {
+    const dir = path_1.default.join(__dirname, "../contents");
+    const fileNames = fs_1.default.readdirSync(dir);
+    const perPage = 5;
+    const totalPage = Math.ceil(fileNames.length / perPage);
+    const page = Number(req.query.page) || 1;
+    if (totalPage < page)
+        return res.redirect("?page=1");
+    const files = fileNames.map((file) => {
+        var _a;
+        const filedir = path_1.default.join(__dirname, `../contents/${file}`);
+        const readFile = fs_1.default.readFileSync(filedir);
+        const { data } = (0, gray_matter_1.default)(readFile);
+        const [day, month, year] = ((_a = data === null || data === void 0 ? void 0 : data.date) === null || _a === void 0 ? void 0 : _a.split("/")) || [null, null, null];
+        const date = day && month && year ? new Date(`${year}-${month}-${day}`) : new Date();
+        return {
+            slug: file.split(".")[0],
+            title: (data === null || data === void 0 ? void 0 : data.title) || file.split(".")[0],
+            short: data === null || data === void 0 ? void 0 : data.short,
+            date,
+            prettyDate: `${date.toLocaleString("default", {
+                month: "long",
+            })} ${date.getDate()}, ${date.getFullYear()}`,
+        };
+    });
+    const filteredFiles = files
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+        .slice(0, 3);
+    const includeDir = path_1.default.join(__dirname, "../views/includes/latest-posts.pug");
+    const render = pug_1.default.compileFile(includeDir);
+    return res.send(render({ posts: filteredFiles }));
 });
 app.use((req, res) => {
     res.status(404);
