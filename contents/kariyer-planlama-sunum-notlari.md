@@ -5,7 +5,7 @@ date: 17/01/2023
 ---
 > Kariyer planlama için hazırladığım sunumda aldığım bazı notlar. Özellikle web alanında kariyer hedefleyen kişiler için kendi deneyimlerimden bazı tavsiyelerde bulunmaya çalıştım.
 
-## Yazılım sektöründe bir çok farklı alanda kariyer geliştirebilirsiniz.
+## Yazılım sektöründe birçok farklı alanda kariyer geliştirebilirsiniz.
 * Gömülü sistem yazılımı
 * Siber güvenlik
 * Mobil uygulama
