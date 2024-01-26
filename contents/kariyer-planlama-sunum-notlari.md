@@ -36,7 +36,7 @@ Az önce bahsettiğim temel şeyleri öğrendikten sonra öğrenmeniz gereken ç
 Zamanla bildiğiniz terimlerin, bilmediklerinizden fazla olduğunu görmeye başlayacaksınız :)
 
 ### roadmap.sh
-Yazılım geliştirmeyi öğrenme sürecinde kaynak, içerik ve yol gösteren bir web sitesi. Frontend, Backend, Full Stack, DevOps gibi bir çok alanda yol haritaları içeriyor.
+Yazılım geliştirmeyi öğrenme sürecinde kaynak, içerik ve yol gösteren bir web sitesi. Frontend, Backend, Full Stack, DevOps gibi birçok alanda yol haritaları içeriyor.
 
 ## Cloud & Serverless
 Bu teknolojileri kullanmayı öğrendikten ve bir seviyeye geldikten sonra kesinlikle cloud teknolojilerini öğrenin. Front-end veya back-end geliştirici olarak çokça kullanacağınız ve işinizi çok kolaylaştıracak bir teknolojidir. Kullanımı oldukça yaygındır ve gelecekte daha da yaygınlaşması bekleniyor. 
@@ -44,7 +44,7 @@ Bu teknolojileri kullanmayı öğrendikten ve bir seviyeye geldikten sonra kesin
 Bknz. AWS, Azure, Google Cloud
 
 ## Yeni nesil mentor: ChatGPT
-ChatGPT! Kendisine çok güvenmemekle birlikte, kullanmaktan çekinmeyin. Bir çok alanda çoğunuzun bunu kullandığını biliyorum ama öncesinde yazılım öğrenirken bir mentor bulmak ve sorularına cevap bulmak bu kadar kolay değildi. ChatGPTyi bir beyin fırtınası aracı olarak kullanmanızı ve ondan öğrendiğiniz topicleri araştırarak kendinize katmanızı tavsiye ederim. 
+ChatGPT! Kendisine çok güvenmemekle birlikte, kullanmaktan çekinmeyin. Birçok alanda çoğunuzun bunu kullandığını biliyorum ama öncesinde yazılım öğrenirken bir mentor bulmak ve sorularına cevap bulmak bu kadar kolay değildi. ChatGPTyi bir beyin fırtınası aracı olarak kullanmanızı ve ondan öğrendiğiniz topicleri araştırarak kendinize katmanızı tavsiye ederim. 
 
 *ChatGPT’nin bazı kullanım alanları:*
 * CV düzenletmek
@@ -55,7 +55,7 @@ ChatGPT! Kendisine çok güvenmemekle birlikte, kullanmaktan çekinmeyin. Bir ç
 * Bug çözme
 
 ## Bonus: Github Student Developer Pack
-Github, öğrenciler için bir paket sunuyor ve içerisinde ücretsiz kullanabileceğiniz bir çok araç mevcut. Tek ihtiyacınız bir öğrenci maili. Bu fırsatı kesinlikle kaçırmayın. 
+Github, öğrenciler için bir paket sunuyor ve içerisinde ücretsiz kullanabileceğiniz birçok araç mevcut. Tek ihtiyacınız bir öğrenci maili. Bu fırsatı kesinlikle kaçırmayın. 
 
 Paket içerisindeki avantajlardan bazıları:
 * DigitalOcean 1 yıllık 200$ credit
