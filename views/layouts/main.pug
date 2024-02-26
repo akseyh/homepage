@@ -6,6 +6,16 @@ html.scroll-smooth.no-scrollbar(lang="en")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     link(href="/output.css" rel="stylesheet")
     script(src="/htmx.min.js" type="text/javascript")
+
+    <!-- Google tag (gtag.js) -->
+    script(async='' src='https://www.googletagmanager.com/gtag/js?id=G-GK5FV8H0LT')
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GK5FV8H0LT');
+
+
     block head
       meta(name="description" content="Şems Yılmaz's personal homepage")
       title Şems Yılmaz
