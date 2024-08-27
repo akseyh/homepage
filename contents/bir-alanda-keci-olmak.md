@@ -1,6 +1,6 @@
 ---
 title: Bir Alanda K.E.Ç.İ. Olmak
-short: Bir yerde bu kelimeyi görünce bununla ilgili bir yazı yazmak istedim. Hakkında çok düşündüğüm ama uygulamada pek başarılı olamadığım bir konu, bir alanın en iyisi olmak. Bazı konularda iyi olduğumu ve bazı işler ortaya çıkardığımı biliyorum. Ama konu o alanın en iyisi olmaya gelince, işte orada sığ kaldığımı hissediyorum. Bu durum özgüven kaybına da sebep oluyor. Aslında burada sadece yazılım kariyerimden bahsetmiyorum, herhangi bir konuda da bir fikir sahibi olmak bana yeterli geliyor. Bu iyi veya kötü mü bilmiyorum.
+short: Bir yerde bu kelimeyi görünce bununla ilgili bir yazı yazmak istedim. Hakkında çok düşündüğüm ama uygulamada pek başarılı olamadığım bir konu, bir alanın en iyisi olmak. Bazı konularda iyi olduğumu ve bazı işler ortaya çıkardığımı biliyorum. Ama konu o alanın en iyisi olmaya gelince, işte orada sığ kaldığımı hissediyorum.
 date: 28/08/2024
 ---
 
