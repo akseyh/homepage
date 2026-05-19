@@ -1,0 +1,45 @@
+---
+import type { Project } from "../data/projects";
+
+export interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<article class="rounded-lg border border-slate-800 bg-slate-900/50 p-5 transition-colors hover:border-slate-700">
+  <h3 class="mb-2 font-mono text-lg font-semibold text-white">{project.title}</h3>
+  <p class="mb-4 text-sm leading-relaxed text-slate-400">{project.description}</p>
+
+  <div class="mb-4 flex flex-wrap gap-2">
+    {project.tags.map((tag) => (
+      <span class="rounded bg-slate-800 px-2 py-0.5 font-mono text-xs text-slate-300">
+        {tag}
+      </span>
+    ))}
+  </div>
+
+  <div class="flex gap-4">
+    {project.url && (
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-mono text-xs text-accent transition-colors hover:underline"
+      >
+        live site &rarr;
+      </a>
+    )}
+    {project.github && (
+      <a
+        href={project.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-mono text-xs text-slate-400 transition-colors hover:text-accent"
+      >
+        source &rarr;
+      </a>
+    )}
+  </div>
+</article>

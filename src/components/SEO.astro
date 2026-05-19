@@ -1,0 +1,29 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonical?: string;
+  type?: "website" | "article";
+}
+
+const { title, description, image, canonical, type = "website" } = Astro.props;
+const siteTitle = `${title} — sems.xyz`;
+---
+
+<title>{siteTitle}</title>
+<meta name="description" content={description} />
+<meta name="robots" content="index, follow" />
+
+<meta property="og:title" content={siteTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content={type} />
+{canonical && <meta property="og:url" content={canonical} />}
+{image && <meta property="og:image" content={image} />}
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={siteTitle} />
+<meta name="twitter:description" content={description} />
+{image && <meta name="twitter:image" content={image} />}
+
+{canonical && <link rel="canonical" href={canonical} />}

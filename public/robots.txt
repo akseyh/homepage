@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://semsyilmaz.com/sitemap-index.xml

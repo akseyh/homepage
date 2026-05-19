@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Home"
+  description="Personal portfolio of sems — software engineer focused on backend, frontend, and cloud infrastructure."
+>
+  <section class="flex flex-col gap-6">
+    <div>
+      <p class="font-mono text-sm text-accent">hey, i&rsquo;m</p>
+      <h1 class="mt-2 font-mono text-4xl font-bold text-white sm:text-5xl">
+        sems
+      </h1>
+      <p class="mt-4 max-w-xl text-base leading-relaxed text-slate-400">
+        Software engineer working on backend, frontend, and cloud
+        infrastructure.
+      </p>
+    </div>
+
+    <div class="flex gap-4">
+      <a
+        href="/projects"
+        class="rounded bg-accent px-4 py-2 font-mono text-sm font-medium text-slate-950 transition-opacity hover:opacity-90"
+      >
+        see my work &rarr;
+      </a>
+      <a
+        href="/blog"
+        class="rounded border border-slate-700 px-4 py-2 font-mono text-sm text-slate-300 transition-colors hover:border-accent hover:text-accent"
+      >
+        read the blog &rarr;
+      </a>
+    </div>
+
+    <div class="mt-8 border-t border-slate-800 pt-8">
+      <h2 class="font-mono text-sm font-semibold uppercase tracking-wider text-slate-500">
+        currently
+      </h2>
+      <ul class="mt-4 space-y-3">
+        <li class="flex items-start gap-3">
+          <span class="mt-1.5 block h-1.5 w-1.5 rounded-full bg-emerald-400" />
+          <span class="text-sm text-slate-400">
+            Building scalable systems, writing clean code, improving dev
+            workflows with DevOps.
+          </span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1.5 block h-1.5 w-1.5 rounded-full bg-accent" />
+          <span class="text-sm text-slate-400">
+            Building projects with Node.js, NestJS, GraphQL, and cloud
+            technologies.
+          </span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1.5 block h-1.5 w-1.5 rounded-full bg-amber-400" />
+          <span class="text-sm text-slate-400">
+            Making YouTube videos about AI and web development.
+          </span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

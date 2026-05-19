@@ -1,0 +1,32 @@
+---
+import SEO from "../components/SEO.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonical?: string;
+  type?: "website" | "article";
+}
+
+const { title, description, image, canonical, type } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <SEO {title} {description} {image} {canonical} {type} />
+  </head>
+  <body class="flex min-h-screen flex-col bg-slate-950 text-gray-100 antialiased">
+    <Header />
+    <main class="mx-auto w-full max-w-3xl flex-1 px-4 py-12">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

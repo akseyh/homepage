@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="About"
+  description="About sems — software engineer focused on scalable systems and web technologies."
+>
+  <section class="flex flex-col gap-8">
+    <div>
+      <p class="font-mono text-sm text-accent">whoami</p>
+      <h1 class="mt-2 font-mono text-3xl font-bold text-white sm:text-4xl">
+        about me
+      </h1>
+    </div>
+
+    <div class="prose prose-invert max-w-none space-y-4 text-sm leading-relaxed text-slate-400">
+      <p>
+        Software engineer focused on backend, frontend, and cloud
+        infrastructure.
+      </p>
+      <p>
+        I like building scalable systems, keeping code clean, and making
+        production workflows better with DevOps practices.
+      </p>
+      <p>
+        I work with Node.js, NestJS, GraphQL, and modern cloud tools. I also
+        take part in product development and technical analysis.
+      </p>
+      <p>
+        I make YouTube videos about AI and web development, and write on
+        Substack about software engineering and system design.
+      </p>
+    </div>
+
+    <div class="rounded-lg border border-slate-800 bg-slate-900/50 p-5">
+      <h2 class="mb-3 font-mono text-sm font-semibold uppercase tracking-wider text-slate-500">
+        tech stack
+      </h2>
+      <div class="flex flex-wrap gap-2">
+        {["Node.js", "NestJS", "GraphQL", "TypeScript", "PostgreSQL", "Docker", "Kubernetes", "AWS", "React", "Astro"].map(
+          (tech) => (
+            <span class="rounded bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">
+              {tech}
+            </span>
+          )
+        )}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
