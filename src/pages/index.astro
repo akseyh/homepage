@@ -1,10 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const currently = [
-  "Writing notes about backend engineering and AI tooling.",
-  "Building internal tools where LLMs earn their place.",
-];
 ---
 
 <BaseLayout
@@ -45,24 +40,6 @@ const currently = [
           github &rarr;
         </a>
       </div>
-    </div>
-
-    <div>
-      <h2
-        class="font-mono text-sm font-semibold uppercase tracking-wider text-slate-500"
-      >
-        currently
-      </h2>
-      <ul class="mt-4 space-y-3">
-        {
-          currently.map((item) => (
-            <li class="flex items-start gap-3">
-              <span class="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-              <span class="text-sm text-slate-400">{item}</span>
-            </li>
-          ))
-        }
-      </ul>
     </div>
   </section>
 </BaseLayout>
