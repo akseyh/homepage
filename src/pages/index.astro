@@ -6,16 +6,19 @@ const experience = [
     company: "Fiyuu",
     role: "Full-stack engineer",
     period: "2026 — now",
+    url: "https://fiyuu.com.tr",
   },
   {
     company: "Cool Digital Solutions",
     role: "Software engineer",
     period: "2021 — 2026",
+    url: "https://letsbecool.com/tr/",
   },
   {
     company: "Fintech Software",
     role: "Frontend developer",
     period: "2020 — 2021",
+    url: "https://www.fintechyazilim.com/en",
   },
 ];
 
@@ -137,7 +140,24 @@ const sectionTitle =
             <li class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-4">
               <div>
                 <h3 class="font-mono text-base font-semibold text-white">
-                  {job.company}
+                  {job.url ? (
+                    <a
+                      href={job.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="group inline-flex items-baseline gap-1.5 transition-colors hover:text-accent"
+                    >
+                      {job.company}
+                      <span
+                        aria-hidden="true"
+                        class="font-mono text-xs text-slate-600 transition-colors group-hover:text-accent"
+                      >
+                        &nearr;
+                      </span>
+                    </a>
+                  ) : (
+                    job.company
+                  )}
                 </h3>
                 <p class="font-mono text-xs text-accent">{job.role}</p>
               </div>
