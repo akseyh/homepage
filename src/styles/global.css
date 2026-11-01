@@ -10,10 +10,8 @@
   ::selection {
     @apply bg-accent/30;
   }
-}
 
-@layer components {
-  .link-underline {
-    @apply relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full;
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-slate-950;
   }
 }

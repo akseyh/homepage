@@ -2,6 +2,8 @@
 import SEO from "../components/SEO.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/jetbrains-mono";
 import "../styles/global.css";
 
 export interface Props {
@@ -20,13 +22,23 @@ const { title, description, image, canonical, type } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#020617" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
     <SEO {title} {description} {image} {canonical} {type} />
   </head>
-  <body class="flex min-h-screen flex-col bg-slate-950 text-gray-100 antialiased">
+  <body class="flex min-h-screen flex-col bg-slate-950 font-sans text-gray-100 antialiased">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-accent focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:text-slate-950"
+    >
+      skip to content
+    </a>
     <Header />
-    <main class="mx-auto w-full max-w-3xl flex-1 px-4 py-12">
+    <main id="main" class="mx-auto w-full max-w-3xl flex-1 px-4 py-12">
       <slot />
     </main>
     <Footer />
   </body>
 </html>
+

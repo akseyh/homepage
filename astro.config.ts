@@ -5,4 +5,9 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://semsyilmaz.com",
   integrations: [tailwind(), sitemap()],
+  trailingSlash: "never",
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: "hover",
+  },
 });

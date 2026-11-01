@@ -1,12 +1,62 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const experience = [
+  {
+    company: "Fiyuu (Tıkla Gelsin)",
+    role: "Full-stack engineer",
+    period: "2026 — now",
+    description:
+      "Courier settlement, reconciliation, and backoffice for a last-mile delivery platform handling 200K+ orders a day. NestJS, Kafka, PostgreSQL, DynamoDB, Kubernetes on AWS.",
+  },
+  {
+    company: "Cool Digital Solutions",
+    role: "Software engineer",
+    period: "2021 — 2026",
+    description:
+      "Five years across fintech and SaaS: open-banking integrations, a monolith-to-modular refactor, LLM workflows on AWS, and a Redis cache that made an 18K-user product ~40% faster. No dedicated DevOps team, so I owned deploys too.",
+  },
+  {
+    company: "Fintech Software",
+    role: "Frontend developer",
+    period: "2020 — 2021",
+    description:
+      "Vue.js HR platform used by 1,000+ companies. Where I learned that the frontend is only as good as the API behind it.",
+  },
+];
+
+const education = [
+  {
+    degree: "MSc, Computer Engineering",
+    school: "Sakarya University",
+    period: "2026 — present",
+  },
+  {
+    degree: "BSc, Computer Engineering",
+    school: "Bilecik Şeyh Edebali University",
+    period: "2017 — 2025",
+  },
+];
+
+const stack = [
+  { label: "backend", items: ["Node.js", "NestJS", "TypeScript", "gRPC", "REST / OpenAPI"] },
+  { label: "data", items: ["PostgreSQL", "Kafka", "Redis", "MongoDB", "MSSQL", "DynamoDB"] },
+  { label: "infra", items: ["AWS", "Kubernetes", "Docker", "Prometheus", "Grafana"] },
+  { label: "frontend", items: ["React", "Next.js", "Vue", "Nuxt", "Astro"] },
+];
+
+const principles = [
+  "Correctness before cleverness. Payout systems don't have an undo button, so I design for idempotency, replay, and audit first.",
+  "Own it end to end — schema, service, deploy, dashboard, and the question of what broke at 3am.",
+  "Small steps, written down. Short-lived changes, clear commit messages, and docs that outlive the sprint.",
+];
 ---
 
 <BaseLayout
   title="About"
-  description="About sems — software engineer focused on scalable systems and web technologies."
+  description="Şems Yılmaz — full-stack engineer with six years across fintech, SaaS, and last-mile delivery. Backend-heavy, ships end to end."
 >
-  <section class="flex flex-col gap-8">
+  <section class="flex flex-col gap-12">
     <div>
       <p class="font-mono text-sm text-accent">whoami</p>
       <h1 class="mt-2 font-mono text-3xl font-bold text-white sm:text-4xl">
@@ -14,38 +64,115 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </h1>
     </div>
 
-    <div class="prose prose-invert max-w-none space-y-4 text-sm leading-relaxed text-slate-400">
+    <div class="space-y-4 text-sm leading-relaxed text-slate-400">
       <p>
-        Software engineer focused on backend, frontend, and cloud
-        infrastructure.
+        I&rsquo;m a full-stack engineer who ended up on the backend because that
+        is where the interesting problems live: money that has to add up,
+        events that arrive twice or out of order, and systems that have to be
+        boring at 3am.
       </p>
       <p>
-        I like building scalable systems, keeping code clean, and making
-        production workflows better with DevOps practices.
+        Today I work on the money side of last-mile delivery at Fiyuu &mdash;
+        daily courier payout close and reconciliation. Before that I spent five
+        years at Cool Digital Solutions building open-banking integrations, a
+        B2B SaaS platform, AI workflows, and a cache layer that cut API
+        response times by about 40%.
       </p>
       <p>
-        I work with Node.js, NestJS, GraphQL, and modern cloud tools. I also
-        take part in product development and technical analysis.
-      </p>
-      <p>
-        I make YouTube videos about AI and web development, and write on
-        Substack about software engineering and system design.
+        I started on the frontend (Vue, then React and Next.js), which is
+        probably why I still care about the backoffice experience as much as
+        the API. I write and occasionally make videos about backend systems,
+        cloud, and AI tooling.
       </p>
     </div>
 
-    <div class="rounded-lg border border-slate-800 bg-slate-900/50 p-5">
-      <h2 class="mb-3 font-mono text-sm font-semibold uppercase tracking-wider text-slate-500">
-        tech stack
+    <div>
+      <h2
+        class="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-slate-500"
+      >
+        experience
       </h2>
-      <div class="flex flex-wrap gap-2">
-        {["Node.js", "NestJS", "GraphQL", "TypeScript", "PostgreSQL", "Docker", "Kubernetes", "AWS", "React", "Astro"].map(
-          (tech) => (
-            <span class="rounded bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">
-              {tech}
-            </span>
-          )
-        )}
-      </div>
+      <ol class="divide-y divide-slate-800 border-y border-slate-800">
+        {
+          experience.map((job) => (
+            <li class="py-5">
+              <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <h3 class="font-mono text-base font-semibold text-white">
+                  {job.company}
+                </h3>
+                <span class="font-mono text-xs text-slate-500">{job.period}</span>
+              </div>
+              <p class="mt-0.5 font-mono text-xs text-accent">{job.role}</p>
+              <p class="mt-2 text-sm leading-relaxed text-slate-400">
+                {job.description}
+              </p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+
+    <div>
+      <h2
+        class="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-slate-500"
+      >
+        how i work
+      </h2>
+      <ul class="space-y-3">
+        {
+          principles.map((item) => (
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+              <span class="text-sm leading-relaxed text-slate-400">{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div>
+      <h2
+        class="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-slate-500"
+      >
+        stack
+      </h2>
+      <dl class="space-y-3">
+        {
+          stack.map((group) => (
+            <div class="grid gap-2 sm:grid-cols-[6rem_1fr] sm:gap-4">
+              <dt class="font-mono text-xs text-slate-500">{group.label}</dt>
+              <dd class="flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <span class="rounded bg-slate-800 px-2.5 py-1 font-mono text-xs text-slate-300">
+                    {item}
+                  </span>
+                ))}
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+
+    <div>
+      <h2
+        class="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-slate-500"
+      >
+        education
+      </h2>
+      <ul class="space-y-3">
+        {
+          education.map((item) => (
+            <li class="flex flex-wrap items-baseline justify-between gap-x-4">
+              <span class="text-sm text-slate-300">
+                {item.degree}
+                <span class="text-slate-500"> · {item.school}</span>
+              </span>
+              <span class="font-mono text-xs text-slate-500">{item.period}</span>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </section>
 </BaseLayout>

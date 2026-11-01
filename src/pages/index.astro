@@ -1,63 +1,128 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const work = [
+  {
+    index: "01",
+    title: "Courier payout close",
+    context: "Fiyuu · last-mile delivery",
+    description:
+      "Daily settlement for 200K+ deliveries across 120+ services. Kafka-driven and replayable by design — a late or duplicated event must never pay a courier twice.",
+    tags: ["NestJS", "Kafka", "PostgreSQL", "AWS"],
+  },
+  {
+    index: "02",
+    title: "LLM knowledge base & AI code review",
+    context: "Fiyuu · internal tooling",
+    description:
+      "An LLM-powered internal wiki and an AI review agent in the daily workflow. The hard part was not the model: it was permissions, cost, and keeping a human in the loop.",
+    tags: ["LLM", "LangChain", "TypeScript"],
+  },
+  {
+    index: "03",
+    title: "90% faster queries",
+    context: "Entrapeer · B2B SaaS",
+    description:
+      "Rebuilt MongoDB aggregation pipelines and indexes on a reporting-heavy service, cutting response times by roughly 90% without changing the API contract.",
+    tags: ["MongoDB", "Node.js", "Performance"],
+  },
+];
+
+const currently = [
+  "Owning the money side of last-mile delivery at Fiyuu: daily payout close, reconciliation, and the events in between.",
+  "Studying networking, distributed systems, and AWS internals as part of an MSc in Computer Engineering.",
+  "Writing about backend systems and AI tooling — slowly, and only when I have something to say.",
+];
 ---
 
 <BaseLayout
   title="Home"
-  description="Personal portfolio of sems — software engineer focused on backend, frontend, and cloud infrastructure."
+  description="Şems Yılmaz — full-stack engineer building payout and reconciliation systems for last-mile delivery. NestJS, Kafka, PostgreSQL, Kubernetes."
 >
-  <section class="flex flex-col gap-6">
+  <section class="flex flex-col gap-10">
     <div>
       <p class="font-mono text-sm text-accent">hey, i&rsquo;m</p>
       <h1 class="mt-2 font-mono text-4xl font-bold text-white sm:text-5xl">
-        sems
+        şems yılmaz
       </h1>
-      <p class="mt-4 max-w-xl text-base leading-relaxed text-slate-400">
-        Software engineer working on backend, frontend, and cloud
-        infrastructure.
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
+        I build the systems that settle courier payouts for a last-mile
+        delivery platform &mdash; <span class="text-white">200K+ orders a day</span>
+        across 120+ services.
       </p>
+      <p class="mt-3 max-w-2xl text-sm leading-relaxed text-slate-400">
+        Backend-heavy full-stack: NestJS, Kafka, PostgreSQL, and Kubernetes on
+        AWS, with enough frontend to ship the backoffice myself.
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a
+          href="/blog"
+          class="rounded bg-accent px-4 py-2 font-mono text-sm font-medium text-slate-950 transition-opacity hover:opacity-90"
+        >
+          read the writing &rarr;
+        </a>
+        <a
+          href="https://github.com/akseyh"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded border border-slate-700 px-4 py-2 font-mono text-sm text-slate-300 transition-colors hover:border-accent hover:text-accent"
+        >
+          github &rarr;
+        </a>
+      </div>
     </div>
 
-    <div class="flex gap-4">
-      <a
-        href="/projects"
-        class="rounded bg-accent px-4 py-2 font-mono text-sm font-medium text-slate-950 transition-opacity hover:opacity-90"
+    <div>
+      <h2
+        class="font-mono text-sm font-semibold uppercase tracking-wider text-slate-500"
       >
-        see my work &rarr;
-      </a>
-      <a
-        href="/blog"
-        class="rounded border border-slate-700 px-4 py-2 font-mono text-sm text-slate-300 transition-colors hover:border-accent hover:text-accent"
-      >
-        read the blog &rarr;
-      </a>
+        selected work
+      </h2>
+      <ol class="mt-4 divide-y divide-slate-800 border-y border-slate-800">
+        {
+          work.map((item) => (
+            <li class="grid gap-2 py-5 sm:grid-cols-[auto_1fr] sm:gap-6">
+              <span class="font-mono text-xs text-accent">{item.index}</span>
+              <div>
+                <h3 class="font-mono text-base font-semibold text-white">
+                  {item.title}
+                  <span class="ml-2 font-mono text-xs font-normal text-slate-500">
+                    {item.context}
+                  </span>
+                </h3>
+                <p class="mt-1.5 text-sm leading-relaxed text-slate-400">
+                  {item.description}
+                </p>
+                <div class="mt-2 flex flex-wrap gap-2">
+                  {item.tags.map((tag) => (
+                    <span class="rounded bg-slate-800 px-2 py-0.5 font-mono text-xs text-slate-300">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
     </div>
 
-    <div class="mt-8 border-t border-slate-800 pt-8">
-      <h2 class="font-mono text-sm font-semibold uppercase tracking-wider text-slate-500">
+    <div>
+      <h2
+        class="font-mono text-sm font-semibold uppercase tracking-wider text-slate-500"
+      >
         currently
       </h2>
       <ul class="mt-4 space-y-3">
-        <li class="flex items-start gap-3">
-          <span class="mt-1.5 block h-1.5 w-1.5 rounded-full bg-emerald-400" />
-          <span class="text-sm text-slate-400">
-            Building scalable systems, writing clean code, improving dev
-            workflows with DevOps.
-          </span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="mt-1.5 block h-1.5 w-1.5 rounded-full bg-accent" />
-          <span class="text-sm text-slate-400">
-            Building projects with Node.js, NestJS, GraphQL, and cloud
-            technologies.
-          </span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="mt-1.5 block h-1.5 w-1.5 rounded-full bg-amber-400" />
-          <span class="text-sm text-slate-400">
-            Making YouTube videos about AI and web development.
-          </span>
-        </li>
+        {
+          currently.map((item) => (
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+              <span class="text-sm text-slate-400">{item}</span>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </section>

@@ -8,8 +8,8 @@ export default {
         accent: "#10b981",
       },
       fontFamily: {
-        mono: ["JetBrains Mono", "Fira Code", "monospace"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono Variable", "ui-monospace", "monospace"],
+        sans: ["Inter Variable", "system-ui", "sans-serif"],
       },
     },
   },
