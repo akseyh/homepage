@@ -1,0 +1,79 @@
+---
+import type { Project } from "../data/projects";
+
+export interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+
+const statusStyles: Record<Project["status"], string> = {
+  live: "border-accent/40 text-accent",
+  "in progress": "border-amber-400/40 text-amber-400",
+  archived: "border-slate-600 text-slate-500",
+};
+---
+
+<article class="rounded-lg border border-slate-800 bg-slate-900/50 p-5 transition-colors hover:border-slate-700">
+  <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+    <h2 class="font-mono text-lg font-semibold text-white">
+      {
+        project.url ? (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-baseline gap-1.5 transition-colors hover:text-accent"
+          >
+            {project.name}
+            <span
+              aria-hidden="true"
+              class="font-mono text-xs text-slate-600 transition-colors group-hover:text-accent"
+            >
+              &nearr;
+            </span>
+          </a>
+        ) : (
+          project.name
+        )
+      }
+    </h2>
+    <span class="font-mono text-xs text-slate-500">{project.period}</span>
+  </div>
+
+  <p class="mt-1 font-mono text-xs text-accent">{project.tagline}</p>
+  <p class="mt-3 text-sm leading-relaxed text-slate-400">{project.description}</p>
+
+  <p class="mt-3 font-mono text-xs text-slate-500">{project.role}</p>
+
+  <div class="mt-4 flex flex-wrap items-center gap-2">
+    {
+      project.stack.map((item) => (
+        <span class="rounded bg-slate-800 px-2.5 py-1 font-mono text-xs text-slate-300">
+          {item}
+        </span>
+      ))
+    }
+    <span
+      class:list={[
+        "ml-auto rounded border px-2 py-0.5 font-mono text-xs",
+        statusStyles[project.status],
+      ]}
+    >
+      {project.status}
+    </span>
+  </div>
+
+  {
+    project.repo && (
+      <a
+        href={project.repo}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-4 inline-block font-mono text-xs text-accent transition-colors hover:underline"
+      >
+        source &rarr;
+      </a>
+    )
+  }
+</article>

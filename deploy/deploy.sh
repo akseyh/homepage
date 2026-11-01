@@ -8,7 +8,7 @@
 #   REMOTE_DIR=/var/www/semsyilmaz
 set -euo pipefail
 
-HOST="${HOST:?usage: HOST=root@<droplet-ip> ./deploy/deploy.sh}"
+HOST="root@159.223.3.67"
 SSH_KEY="${SSH_KEY:-$HOME/.ssh/homepage_ed25519}"
 REMOTE_DIR="${REMOTE_DIR:-/var/www/semsyilmaz}"
 SSH=(ssh -i "$SSH_KEY" -o StrictHostKeyChecking=accept-new "$HOST")
