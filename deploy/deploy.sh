@@ -24,6 +24,15 @@ if ! command -v nginx >/dev/null 2>&1; then
   DEBIAN_FRONTEND=noninteractive apt-get install -y nginx rsync
 fi
 mkdir -p "$REMOTE_DIR"
+# Cloudflare terminates TLS at the edge but needs an origin certificate when the
+# SSL/TLS mode is "Full". A self-signed cert is enough for that mode.
+if [ ! -s /etc/ssl/certs/semsyilmaz.crt ] || [ ! -s /etc/ssl/private/semsyilmaz.key ]; then
+  openssl req -x509 -nodes -newkey rsa:2048 -days 3650 \
+    -subj "/CN=semsyilmaz.com" \
+    -keyout /etc/ssl/private/semsyilmaz.key \
+    -out /etc/ssl/certs/semsyilmaz.crt >/dev/null 2>&1
+  chmod 600 /etc/ssl/private/semsyilmaz.key
+fi
 if command -v ufw >/dev/null 2>&1 && ufw status | grep -q "Status: active"; then
   ufw allow "Nginx Full" >/dev/null
 fi
