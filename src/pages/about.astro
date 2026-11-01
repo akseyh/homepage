@@ -36,7 +36,14 @@ const stack = [
   { label: "backend", items: ["Node.js", "NestJS", "TypeScript", "gRPC", "REST / OpenAPI"] },
   { label: "data", items: ["PostgreSQL", "Kafka", "Redis", "MongoDB", "MSSQL", "DynamoDB"] },
   { label: "infra", items: ["AWS", "Kubernetes", "Docker", "Prometheus", "Grafana"] },
+  { label: "ai", items: ["LangChain", "LangGraph", "RAG", "Agents", "n8n"] },
   { label: "frontend", items: ["React", "Next.js", "Vue", "Nuxt", "Astro"] },
+];
+
+const aiWork = [
+  "Internal knowledge bases grounded in team documentation — retrieval over the source, not fine-tuning.",
+  "AI-assisted code review wired into the daily workflow, with a human in the loop.",
+  "Production automation with n8n: scheduled jobs and internal workflows that used to be manual.",
 ];
 
 const principles = [
@@ -48,7 +55,7 @@ const principles = [
 
 <BaseLayout
   title="About"
-  description="Şems Yılmaz — full-stack engineer with six years of experience across backend, data, and cloud infrastructure."
+  description="Şems Yılmaz — full-stack engineer with six years of experience across backend, data, cloud infrastructure, and AI tooling."
 >
   <section class="flex flex-col gap-12">
     <div>
@@ -69,6 +76,10 @@ const principles = [
         These days I work with Node.js, NestJS, TypeScript, Kafka, PostgreSQL,
         and Kubernetes. I like problems where correctness matters, interfaces
         are clear, and systems stay understandable after the first version.
+      </p>
+      <p>
+        I also build with LLMs, mostly around the model rather than in it:
+        retrieval, agent workflows, and AI-assisted developer tooling.
       </p>
     </div>
 
@@ -104,6 +115,24 @@ const principles = [
       <ul class="space-y-3">
         {
           principles.map((item) => (
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+              <span class="text-sm leading-relaxed text-slate-400">{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div>
+      <h2
+        class="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-slate-500"
+      >
+        ai &amp; llm
+      </h2>
+      <ul class="space-y-3">
+        {
+          aiWork.map((item) => (
             <li class="flex items-start gap-3">
               <span class="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
               <span class="text-sm leading-relaxed text-slate-400">{item}</span>

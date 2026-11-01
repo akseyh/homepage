@@ -6,7 +6,7 @@ export const site = {
   role: "Full-Stack Engineer",
   email: "yilmazsems@gmail.com",
   description:
-    "Full-stack engineer focused on backend systems, distributed data, and cloud infrastructure.",
+    "Full-stack engineer focused on backend systems, distributed data, cloud infrastructure, and AI tooling.",
   locale: "en_US",
   twitter: "@akseyh",
 } as const;
