@@ -1,43 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const work = [
-  {
-    index: "01",
-    title: "Courier payout close",
-    context: "Fiyuu · last-mile delivery",
-    description:
-      "Daily settlement for 200K+ deliveries across 120+ services. Kafka-driven and replayable by design — a late or duplicated event must never pay a courier twice.",
-    tags: ["NestJS", "Kafka", "PostgreSQL", "AWS"],
-  },
-  {
-    index: "02",
-    title: "LLM knowledge base & AI code review",
-    context: "Fiyuu · internal tooling",
-    description:
-      "An LLM-powered internal wiki and an AI review agent in the daily workflow. The hard part was not the model: it was permissions, cost, and keeping a human in the loop.",
-    tags: ["LLM", "LangChain", "TypeScript"],
-  },
-  {
-    index: "03",
-    title: "90% faster queries",
-    context: "Entrapeer · B2B SaaS",
-    description:
-      "Rebuilt MongoDB aggregation pipelines and indexes on a reporting-heavy service, cutting response times by roughly 90% without changing the API contract.",
-    tags: ["MongoDB", "Node.js", "Performance"],
-  },
-];
-
 const currently = [
-  "Owning the money side of last-mile delivery at Fiyuu: daily payout close, reconciliation, and the events in between.",
-  "Studying networking, distributed systems, and AWS internals as part of an MSc in Computer Engineering.",
-  "Writing about backend systems and AI tooling — slowly, and only when I have something to say.",
+  "Studying networking, distributed systems, and cloud fundamentals.",
+  "Writing notes about backend engineering and AI tooling.",
+  "Open to backend and platform roles.",
 ];
 ---
 
 <BaseLayout
   title="Home"
-  description="Şems Yılmaz — full-stack engineer building payout and reconciliation systems for last-mile delivery. NestJS, Kafka, PostgreSQL, Kubernetes."
+  description="Şems Yılmaz — full-stack engineer focused on backend systems, distributed data, and cloud infrastructure."
 >
   <section class="flex flex-col gap-10">
     <div>
@@ -46,13 +19,14 @@ const currently = [
         şems yılmaz
       </h1>
       <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
-        I build the systems that settle courier payouts for a last-mile
-        delivery platform &mdash; <span class="text-white">200K+ orders a day</span>
-        across 120+ services.
+        Full-stack engineer with six years of experience, mostly on the
+        backend. I like systems where correctness matters &mdash; and I care
+        about the whole path from the database to the UI.
       </p>
       <p class="mt-3 max-w-2xl text-sm leading-relaxed text-slate-400">
-        Backend-heavy full-stack: NestJS, Kafka, PostgreSQL, and Kubernetes on
-        AWS, with enough frontend to ship the backoffice myself.
+        I work with Node.js, NestJS, TypeScript, Kafka, PostgreSQL, and
+        Kubernetes: backend-first, with enough frontend to ship the whole
+        feature.
       </p>
 
       <div class="mt-6 flex flex-wrap gap-3">
@@ -71,41 +45,6 @@ const currently = [
           github &rarr;
         </a>
       </div>
-    </div>
-
-    <div>
-      <h2
-        class="font-mono text-sm font-semibold uppercase tracking-wider text-slate-500"
-      >
-        selected work
-      </h2>
-      <ol class="mt-4 divide-y divide-slate-800 border-y border-slate-800">
-        {
-          work.map((item) => (
-            <li class="grid gap-2 py-5 sm:grid-cols-[auto_1fr] sm:gap-6">
-              <span class="font-mono text-xs text-accent">{item.index}</span>
-              <div>
-                <h3 class="font-mono text-base font-semibold text-white">
-                  {item.title}
-                  <span class="ml-2 font-mono text-xs font-normal text-slate-500">
-                    {item.context}
-                  </span>
-                </h3>
-                <p class="mt-1.5 text-sm leading-relaxed text-slate-400">
-                  {item.description}
-                </p>
-                <div class="mt-2 flex flex-wrap gap-2">
-                  {item.tags.map((tag) => (
-                    <span class="rounded bg-slate-800 px-2 py-0.5 font-mono text-xs text-slate-300">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </li>
-          ))
-        }
-      </ol>
     </div>
 
     <div>

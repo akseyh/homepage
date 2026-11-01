@@ -6,22 +6,16 @@ const experience = [
     company: "Fiyuu (Tıkla Gelsin)",
     role: "Full-stack engineer",
     period: "2026 — now",
-    description:
-      "Courier settlement, reconciliation, and backoffice for a last-mile delivery platform handling 200K+ orders a day. NestJS, Kafka, PostgreSQL, DynamoDB, Kubernetes on AWS.",
   },
   {
     company: "Cool Digital Solutions",
     role: "Software engineer",
     period: "2021 — 2026",
-    description:
-      "Five years across fintech and SaaS: open-banking integrations, a monolith-to-modular refactor, LLM workflows on AWS, and a Redis cache that made an 18K-user product ~40% faster. No dedicated DevOps team, so I owned deploys too.",
   },
   {
     company: "Fintech Software",
     role: "Frontend developer",
     period: "2020 — 2021",
-    description:
-      "Vue.js HR platform used by 1,000+ companies. Where I learned that the frontend is only as good as the API behind it.",
   },
 ];
 
@@ -46,15 +40,15 @@ const stack = [
 ];
 
 const principles = [
-  "Correctness before cleverness. Payout systems don't have an undo button, so I design for idempotency, replay, and audit first.",
-  "Own it end to end — schema, service, deploy, dashboard, and the question of what broke at 3am.",
-  "Small steps, written down. Short-lived changes, clear commit messages, and docs that outlive the sprint.",
+  "Correctness before cleverness. I’d rather ship a boring system that holds than a clever one that needs a rescue.",
+  "Own it end to end — design, implementation, deployment, and the dashboard after.",
+  "Leave things easier to operate than I found them, and write down what I learned.",
 ];
 ---
 
 <BaseLayout
   title="About"
-  description="Şems Yılmaz — full-stack engineer with six years across fintech, SaaS, and last-mile delivery. Backend-heavy, ships end to end."
+  description="Şems Yılmaz — full-stack engineer with six years of experience across backend, data, and cloud infrastructure."
 >
   <section class="flex flex-col gap-12">
     <div>
@@ -66,23 +60,19 @@ const principles = [
 
     <div class="space-y-4 text-sm leading-relaxed text-slate-400">
       <p>
-        I&rsquo;m a full-stack engineer who ended up on the backend because that
-        is where the interesting problems live: money that has to add up,
-        events that arrive twice or out of order, and systems that have to be
-        boring at 3am.
+        I&rsquo;m a full-stack engineer with six years of experience, mostly on
+        the backend. I started on the frontend, which is probably why I still
+        care about the experience of the people using the software as much as
+        the API behind it.
       </p>
       <p>
-        Today I work on the money side of last-mile delivery at Fiyuu &mdash;
-        daily courier payout close and reconciliation. Before that I spent five
-        years at Cool Digital Solutions building open-banking integrations, a
-        B2B SaaS platform, AI workflows, and a cache layer that cut API
-        response times by about 40%.
+        These days I work with Node.js, NestJS, TypeScript, Kafka, PostgreSQL,
+        and Kubernetes. I like problems where correctness matters, interfaces
+        are clear, and systems stay understandable after the first version.
       </p>
       <p>
-        I started on the frontend (Vue, then React and Next.js), which is
-        probably why I still care about the backoffice experience as much as
-        the API. I write and occasionally make videos about backend systems,
-        cloud, and AI tooling.
+        Outside of work I study networking, distributed systems, and cloud
+        fundamentals, and I write about what I learn.
       </p>
     </div>
 
@@ -95,17 +85,14 @@ const principles = [
       <ol class="divide-y divide-slate-800 border-y border-slate-800">
         {
           experience.map((job) => (
-            <li class="py-5">
-              <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <li class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-4">
+              <div>
                 <h3 class="font-mono text-base font-semibold text-white">
                   {job.company}
                 </h3>
-                <span class="font-mono text-xs text-slate-500">{job.period}</span>
+                <p class="font-mono text-xs text-accent">{job.role}</p>
               </div>
-              <p class="mt-0.5 font-mono text-xs text-accent">{job.role}</p>
-              <p class="mt-2 text-sm leading-relaxed text-slate-400">
-                {job.description}
-              </p>
+              <span class="font-mono text-xs text-slate-500">{job.period}</span>
             </li>
           ))
         }
