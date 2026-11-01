@@ -1,13 +1,67 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const experience = [
+  {
+    company: "Fiyuu (Tıkla Gelsin)",
+    role: "Full-stack engineer",
+    period: "2026 — now",
+  },
+  {
+    company: "Cool Digital Solutions",
+    role: "Software engineer",
+    period: "2021 — 2026",
+  },
+  {
+    company: "Fintech Software",
+    role: "Frontend developer",
+    period: "2020 — 2021",
+  },
+];
+
+const principles = [
+  "Correctness before cleverness. I’d rather ship a boring system that holds than a clever one that needs a rescue.",
+  "Own it end to end — design, implementation, deployment, and the dashboard after.",
+  "Leave things easier to operate than I found them, and write down what I learned.",
+];
+
+const aiWork = [
+  "Internal knowledge bases grounded in team documentation — retrieval over the source, not fine-tuning.",
+  "AI-assisted code review wired into the daily workflow, with a human in the loop.",
+  "Production automation with n8n: scheduled jobs and internal workflows that used to be manual.",
+];
+
+const stack = [
+  { label: "backend", items: ["Node.js", "NestJS", "TypeScript", "gRPC", "REST / OpenAPI"] },
+  { label: "data", items: ["PostgreSQL", "Kafka", "Redis", "MongoDB", "MSSQL", "DynamoDB"] },
+  { label: "infra", items: ["AWS", "Kubernetes", "Docker", "Prometheus", "Grafana"] },
+  { label: "ai", items: ["LangChain", "LangGraph", "RAG", "Agents", "n8n"] },
+  { label: "frontend", items: ["React", "Next.js", "Vue", "Nuxt", "Astro"] },
+];
+
+const education = [
+  {
+    degree: "MSc, Computer Engineering",
+    school: "Sakarya University",
+    period: "2026 — present",
+  },
+  {
+    degree: "BSc, Computer Engineering",
+    school: "Bilecik Şeyh Edebali University",
+    period: "2017 — 2025",
+  },
+];
+
+const sectionTitle =
+  "font-mono text-sm font-semibold uppercase tracking-wider text-slate-500";
 ---
 
 <BaseLayout
   title="Home"
-  description="Şems Yılmaz — full-stack engineer focused on backend systems, distributed data, cloud infrastructure, and AI tooling."
+  description="Şems Yılmaz — full-stack engineer working across backend, data, cloud infrastructure, and AI tooling."
 >
-  <section class="flex flex-col gap-10">
-    <div>
+  <div class="flex flex-col gap-16">
+    <section>
       <p class="font-mono text-sm text-accent">hey, i&rsquo;m</p>
       <h1 class="mt-2 font-mono text-4xl font-bold text-white sm:text-5xl">
         şems yılmaz
@@ -40,6 +94,109 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           github &rarr;
         </a>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="about" class="border-t border-slate-800 pt-10">
+      <h2 class={sectionTitle}>about</h2>
+      <div class="mt-4 space-y-4 text-sm leading-relaxed text-slate-400">
+        <p>
+          I&rsquo;m a full-stack engineer, mostly on the backend. I started on
+          the frontend, which is probably why I still care about the experience
+          of the people using the software as much as the API behind it.
+        </p>
+        <p>
+          These days I work with Node.js, NestJS, TypeScript, Kafka,
+          PostgreSQL, and Kubernetes. I like problems where correctness
+          matters, interfaces are clear, and systems stay understandable after
+          the first version.
+        </p>
+        <p>
+          I also build with LLMs, mostly around the model rather than in it:
+          retrieval, agent workflows, and AI-assisted developer tooling.
+        </p>
+      </div>
+
+      <h3 class={`${sectionTitle} mt-10`}>how i work</h3>
+      <ul class="mt-4 space-y-3">
+        {
+          principles.map((item) => (
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+              <span class="text-sm leading-relaxed text-slate-400">{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section id="experience" class="border-t border-slate-800 pt-10">
+      <h2 class={sectionTitle}>experience</h2>
+      <ol class="mt-4 divide-y divide-slate-800 border-y border-slate-800">
+        {
+          experience.map((job) => (
+            <li class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-4">
+              <div>
+                <h3 class="font-mono text-base font-semibold text-white">
+                  {job.company}
+                </h3>
+                <p class="font-mono text-xs text-accent">{job.role}</p>
+              </div>
+              <span class="font-mono text-xs text-slate-500">{job.period}</span>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section id="ai" class="border-t border-slate-800 pt-10">
+      <h2 class={sectionTitle}>ai &amp; llm</h2>
+      <ul class="mt-4 space-y-3">
+        {
+          aiWork.map((item) => (
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+              <span class="text-sm leading-relaxed text-slate-400">{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section id="stack" class="border-t border-slate-800 pt-10">
+      <h2 class={sectionTitle}>stack</h2>
+      <dl class="mt-4 space-y-3">
+        {
+          stack.map((group) => (
+            <div class="grid gap-2 sm:grid-cols-[6rem_1fr] sm:gap-4">
+              <dt class="font-mono text-xs text-slate-500">{group.label}</dt>
+              <dd class="flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <span class="rounded bg-slate-800 px-2.5 py-1 font-mono text-xs text-slate-300">
+                    {item}
+                  </span>
+                ))}
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
+
+    <section id="education" class="border-t border-slate-800 pt-10">
+      <h2 class={sectionTitle}>education</h2>
+      <ul class="mt-4 space-y-3">
+        {
+          education.map((item) => (
+            <li class="flex flex-wrap items-baseline justify-between gap-x-4">
+              <span class="text-sm text-slate-300">
+                {item.degree}
+                <span class="text-slate-500"> · {item.school}</span>
+              </span>
+              <span class="font-mono text-xs text-slate-500">{item.period}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
 </BaseLayout>

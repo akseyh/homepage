@@ -6,6 +6,9 @@ export default defineConfig({
   site: "https://semsyilmaz.com",
   integrations: [tailwind(), sitemap()],
   trailingSlash: "never",
+  redirects: {
+    "/about": "/#about",
+  },
   prefetch: {
     prefetchAll: true,
     defaultStrategy: "hover",

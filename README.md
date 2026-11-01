@@ -52,7 +52,7 @@ src/
   data/site.ts  single source of truth for name, email, socials
   layouts/      BaseLayout
   lib/rss.ts    Substack feed parsing (build time)
-  pages/        index, about, blog, contact, 404
+  pages/        index (single-page home), blog, contact, 404
 deploy/         nginx config + deploy script
 ```
 
