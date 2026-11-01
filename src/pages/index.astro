@@ -28,12 +28,6 @@ const principles = [
   "Leave things easier to operate than I found them, and write down what I learned.",
 ];
 
-const aiWork = [
-  "Internal knowledge bases grounded in team documentation — retrieval over the source, not fine-tuning.",
-  "AI-assisted code review wired into the daily workflow, with a human in the loop.",
-  "Production automation with n8n: scheduled jobs and internal workflows that used to be manual.",
-];
-
 const stack = [
   { label: "backend", items: ["Node.js", "NestJS", "TypeScript", "gRPC", "REST / OpenAPI"] },
   { label: "data", items: ["PostgreSQL", "Kafka", "Redis", "MongoDB", "MSSQL", "DynamoDB"] },
@@ -77,8 +71,7 @@ const sectionTitle =
       <p class="mt-3 max-w-2xl text-sm leading-relaxed text-slate-400">
         I work with Node.js, NestJS, TypeScript, Kafka, PostgreSQL, and
         Kubernetes: backend-first, with enough frontend to ship the whole
-        feature. Lately that also includes LLM-powered workflows and internal
-        tooling.
+        feature.
       </p>
 
       <div class="mt-6 flex flex-wrap gap-3">
@@ -112,10 +105,6 @@ const sectionTitle =
           PostgreSQL, and Kubernetes. I like problems where correctness
           matters, interfaces are clear, and systems stay understandable after
           the first version.
-        </p>
-        <p>
-          I also build with LLMs, mostly around the model rather than in it:
-          retrieval, agent workflows, and AI-assisted developer tooling.
         </p>
       </div>
 
@@ -166,20 +155,6 @@ const sectionTitle =
           ))
         }
       </ol>
-    </section>
-
-    <section id="ai" class="border-t border-slate-800 pt-10">
-      <h2 class={sectionTitle}>ai &amp; llm</h2>
-      <ul class="mt-4 space-y-3">
-        {
-          aiWork.map((item) => (
-            <li class="flex items-start gap-3">
-              <span class="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-              <span class="text-sm leading-relaxed text-slate-400">{item}</span>
-            </li>
-          ))
-        }
-      </ul>
     </section>
 
     <section id="stack" class="border-t border-slate-800 pt-10">
